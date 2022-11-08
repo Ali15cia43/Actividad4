@@ -1,95 +1,24 @@
 {
   "tests": [
     {
-      "name": "Test 1 - arreglos",
-      "setup": "g++ -o arreglos arreglos.cpp",
-      "run": "./arreglos",
-      "input": "1\n90\n100\n40\n30\n40\n",
-      "output": "90\n100\n40\n30\n40\nTotal = 300\nPromedio = 60\n",
+      "name": "Test 1 - reloj opcion 1 - hr 10",
+      "setup": "g++ -o main main.cpp",
+      "run": "./main",
+      "input": "1\n10",
+      "output": "10:00\n",
       "comparison": "included",
       "timeout": 2,
       "points": 10
     },
     {
-      "name": "Test 2 - arreglos",
-      "setup": "g++ -o arreglos arreglos.cpp",
-      "run": "./arreglos",
-      "input": "1\n2\n3\n4\n5\n6\n",
-      "output": "2\n3\n4\n5\n6\nTotal = 20\nPromedio = 4\n",
+      "name": "Test 2 - reloj opcion 2 - minutos 10",
+      "setup": "g++ -o main main.cpp",
+      "run": "./main",
+      "input": "2\n10",
+      "output": "10:10\n",
       "comparison": "included",
       "timeout": 2,
       "points": 10
-    },
-     {
-     "name": "Test 3 - arreglos",
-      "setup": "g++ -o arreglos arreglos.cpp",
-      "run": "./arreglos",
-      "input": "1\n10\n20\n30\n40\n50\n",
-      "output": "10\n20\n30\n40\n50\nTotal = 150\nPromedio = 30\n",
-      "comparison": "included",
-      "timeout": 2,
-      "points": 10
-    },
-     {
-       "name": "Test 5 - arreglos opcion 2",
-      "setup": "g++ -o arreglos arreglos.cpp",
-      "run": "./arreglos",
-      "input": "2\n10\n15\n20\n25\n30\n",
-      "output": "10\n20\n30\nTotal = 60\nPromedio = 20\n",
-      "comparison": "included",
-      "timeout": 2,
-      "points": 10
-    },
-    
-    {
-       "name": "Test 4 - arreglos opcion 2",
-      "setup": "g++ -o arreglos arreglos.cpp",
-      "run": "./arreglos",
-      "input": "2\n1\n3\n5\n7\n9\n",
-      "output": "No hubo valores pares en el arreglo",
-      "comparison": "included",
-      "timeout": 2,
-      "points": 10
-    },
-    {
-      "name": "Test 6 - arreglos opcion 2",
-      "setup": "g++ -o arreglos arreglos.cpp",
-      "run": "./arreglos",
-      "input": "2\n1\n500\n2\n700\n7\n",
-      "output": "500\n2\n700\nTotal = 1202\nPromedio = 400.667\n",
-      "comparison": "included",
-      "timeout": 2,
-      "points": 10
-    },
-    {
-       "name": "Test 7 - arreglos opcion 3",
-      "setup": "g++ -o arreglos arreglos.cpp",
-      "run": "./arreglos",
-      "input": "3\n110\n",
-      "output": "1 Felipe 110\n2 Natalia 110\n3 Paulina 110\n4 Vicente 120\n5 Gerardo 110\n6 Sergio 110\nTotal = 6",
-      "comparison": "included",
-      "timeout": 2,
-      "points": 10
-    },
-     {
-      "name": "Test 8 - arreglos opcion 3",
-      "setup": "g++ -o arreglos arreglos.cpp",
-      "run": "./arreglos",
-      "input": "3\n120\n",
-      "output": "1 Vicente 120\nTotal = 1\n",
-      "comparison": "included",
-      "timeout": 2,
-      "points": 10
-    },
-    {
-      "name": "Test 9 - arreglos opcion 3",
-      "setup": "g++ -o arreglos arreglos.cpp",
-      "run": "./arreglos",
-      "input": "3\n300\n",
-      "output": "No hubo alumnos\n",
-      "comparison": "included",
-      "timeout": 2,
-      "points": 20
     }
   ]
 }
