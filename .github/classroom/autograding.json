@@ -8,7 +8,7 @@
       "output": "10:00\n10:30\n10:31\n10:32\n10:32\n00:32\n00:59\n01:00\n01:01\n",
       "comparison": "included",
       "timeout": 2,
-      "points": 10
+      "points": 100
     }
   ]
 }
