@@ -2,7 +2,7 @@
   "tests": [
     {
       "name": "Test 1 - reloj datos de entrada 1  10 2 30  3  3 4",
-      "setup": "g++ -o main main.cpp",
+      "setup": "g++ -g -c Reloj.cpp\n g++ -g main.cpp\ng++ -g -o main Reloj.o main.o",
       "run": "./main",
       "input": "1\n10\n2\n30\n3\n3\n4\n",
       "output": "10:00\n10:30\n10:31\n10:32\n",
