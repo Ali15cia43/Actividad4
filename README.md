@@ -1,95 +1,68 @@
-# C++ Ejercicio Arreglos
+# C++ Ejercicio Clase Reloj
 
 <img alt="points bar" align="right" height="36" src="../../blob/status/.github/activity-icons/points-bar.svg" />
 
 
 ```c++
-///
+//
 //  main.cpp
-//  Arreglos
+//  AppReloj
 //
-//  Created by Ma. Guadalupe Roque Díaz de León on 31/10/22.
+//  Created by Ma. Guadalupe Roque Díaz de León on 08/11/22.
 //
-// Objetivos - arreglos unidimensionales -
-//           - ciclo for
-//           - uso de condicionales if - else
-//           - arreglos como parámetros de una función - paso de parámetros x REFERENCIA
-//           - llamar a una función usando arreglos
-//           - funciones void en c++
-//
+
 #include <iostream>
-using namespace std;
-//*************************************************
-//* Nombre:
-//* Matricula:
-//* Carrera:
-//*************************************************
+#include "Reloj.hpp"
 
-// Diseña y codifica en c++ una Función que lee del teclado todos los valores que
-// almacenará en el arreglo
-// concepto muy importante - paso de parámetros por referencia - tu y Yo somos uno mismo
-// el argumento correspondiente es el que se modifica directamente
-void leerArreglo(int arrA[], int size){
-   // Añade las instrucciones y comentarios
-}
-
-
-// Diseña y codifica en c++ una Función que despliega el contenido del arreglo
-//    - cada elemento en un renglón diferente  y
-// además calcula y despliega la suma y promedio de todos los elementos del arreglo
-// ver casos de prueba opcion 1
-void sumaYpromedioArreglo(int arrA[], int size){
-    // Añade las instrucciones y comentarios
-
-}
-
-
-// Diseña y codifica en c++ una Función que despliega los valores pares del arreglo
-//    - cada elemento en un renglón diferente  y
-//      calcula y despliega  la suma y promedio de los valores pares del arreglo
-//      Si el arreglo no tiene valores pares la función muestra
-//          "No hubo valores pares en el arreglo\n"
-// ver casos de prueba opcion 2
-void sumaValoresPares(int arrA[], int size){
-    // Añade las instrucciones y comentarios
-    
-}
-
-// Diseña y codifica en c++ una Función reporteAlumnos - despliega en pantalla el nombre de los alumnos que tuvieron
-// una calificación igual o superior a la recibida en el parámetro de entrada calificacion.
-// Posteriormente muestra el Total de alumnos que cumplieron usando  "Total = "
-// Si ningún alumno cumple se muestra - "No hubo alumnos"
-// ver casos de prueba opcion 3
-void reporteAlumnos(string arrNombresAlumnos[], int arrCalificacionesAlumnos[], int size, int calificacion){
-    // Añade las instrucciones y comentarios
-}
-
-
-int main() {
-    // 1º Declaración de variables
-    int arrB[5];
-    
-    // 2º Declaración e Inicialización de arreglos y variables desde código
-    string arrNombres[] = {"Felipe","Natalia","Gustavo","Victoria", "Debanhi", "Paulina", "Vicente", "Ana Paula", "Gerardo", "Sergio", "Cho", "Gaby"};
-    int arrCalificaciones[] = {110,110,100,100,100,110,120,100,110,110,100,105};
-    int size = 5;
-    int opcion, calificacion;
-    
-    // 3º leer la opcion a ejecutar
+int menu(){
+    int opcion;
+    /*
+    cout << "Menú de opciones" <<
+    "\n1. setHora(int)" <<
+    "\n2. setMinutos(int)" <<
+    "\n3. incremetar Minutos" <<
+    "\n4. Salir" <<
+    "\nTeclea la opcion:";
+    // leer la opcion
+     */
     cin >> opcion;
     
-    // 4º Añade las instrucciones solicitadas:
-    // solo Si es opcion 1 o 2 llamar a la función que lee 5 valores enteros del teclado
-   
-    // si la opcion es 1 llamar a la función sumaYpromedioArreglo(arrB, size)
+    return opcion;
+}
 
-    // si no Si la opcion es 2 llamar a la función sumaValoresPares(arrB, size)
+int main() {
+    // Declaración del objeto de la clase Reloj
+    Reloj evento;
+    int opcion, hr, min;
     
-
-    // si no Si la opcion es 3 leer calificación y llamar a la función      reporteAlumnos(arrNombres, arrCalificaciones, 12, calificacion)
+    // 1º Inicializar la vccc - la función menu( ) retorna la opcion elegida por el usuario
+    opcion = menu( );
     
-    // si no es alguna de las opciones desplegar "opcion incorrecta"
-
+    while (opcion != 4){ // 2º Incluir la condición la vccc
+        
+        if (opcion == 1){
+            // leer hora
+            //cout << "Ingresa la nueva hora:";
+            cin >> hr;
+            evento.setHora(hr);
+        }
+        else if (opcion == 2){
+            // leer minutos
+            //cout << "Ingresa los nuevos minutos:";
+            cin >> min;
+            evento.setMinutos(min);
+        }
+        else if (opcion == 3){
+            evento.incrementaMinutos();
+        }
+       
+        else
+            cout << "Opcion incorrecta\n";
+        
+        cout << evento.str( ) << endl;
+        opcion = menu(); // 3º Actualizar la vccc dentro del ciclo
+    }
+    
     return 0;
 }
 
@@ -100,127 +73,17 @@ int main() {
 // caso 1 - opcion 1
 Datos de entrada:
 1
-90
-100
-40
-30
-40
-Datos de salida:
-90
-100
-40
-30
-40
-Total = 300
-Promedio = 60
-
-// caso 2 - opcion 1
-Datos de entrada:
-1
+10
 2
+30
+3
 3
 4
-5
-6
 Datos de salida:
-2
-3
-4
-5
-6
-Total = 20
-Promedio = 4
-
-// caso 3 - opcion 1
-Datos de entrada
-1
-10
-20
-30
-40
-50
-Datos de salida
-10
-20
-30
-40
-50
-Total = 150
-Promedio = 30
-
-// caso 4 - opcion 2
-Datos de entrada:
-2
-1
-3
-5
-7
-9
-Datos de salida:
-No hubo valores pares en el arreglo
-
-// caso 5 - opcion 2
-Datos de entrada:
-2
-10
-15
-20
-25
-30
-Datos de salida:
-10
-20
-30
-Total = 60
-Promedio = 20
-
-// caso 6 - opcion 2
-Datos de entrada:
-2
-1
-500
-2
-700
-7
-Datos de salida:
-500
-2
-700
-Total = 1202
-Promedio = 400.667
-
-// caso 7 - opcion 3
-Datos de entrada:
-3
-110
-
-Datos de salida:
-1 Felipe 110
-2 Natalia 110
-3 Paulina 110
-4 Vicente 120
-5 Gerardo 110
-6 Sergio 110
-Total = 6
-
-// caso 8 - opcion 3
-Datos de entrada:
-3
-120
-
-Datos de salida:
-1 Vicente 120
-Total = 1
-
-// caso 9 - opcion 3
-Datos de entrada:
-3
-300
-Datos de salida:
-No hubo alumnos
-
-
-*/
+10:00
+10:30
+10:31
+10:32
 ```
 
 2. Push your changes back to your assignment GitHub repo. Remember to try to make your commits atomic and your commit messages descriptive.
