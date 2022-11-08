@@ -78,12 +78,25 @@ Datos de entrada:
 30
 3
 3
+1
+80
+1
+0
+2
+59
+3
+3
 4
 Datos de salida:
 10:00
 10:30
 10:31
 10:32
+10:32
+00:32
+00:59
+01:00
+01:01
 ```
 
 2. Push your changes back to your assignment GitHub repo. Remember to try to make your commits atomic and your commit messages descriptive.
