@@ -29,6 +29,8 @@ int main() {
     Reloj evento;
     int opcion, hr, min;
     
+    evento.setHora(0);
+    evento.setMinutos(0);
     // 1º Inicializar la vccc - la función menu( ) retorna la opcion elegida por el usuario
     opcion = menu( );
     
