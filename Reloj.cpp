@@ -1,11 +1,10 @@
 //
-// Created by alicia de la g on 07/11/2023..
+// Created by alicia de la g on 07/11/2023
 //
 
 #include "Reloj.h"
 #include <string>
-#include <stdio.h>
-#include "Reloj.h"
+
 using namespace std;
 
 void Reloj::setHora(int _hora) {
