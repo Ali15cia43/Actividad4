@@ -6,11 +6,14 @@
 //
 
 #include <iostream>
-#include "Reloj.hpp"
+#include "Reloj.cpp"
+#include "Reloj.h"
+
+using namespace std;
 
 int menu(){
     int opcion;
-    /*
+
     cout << "Menú de opciones" <<
     "\n1. setHora(int)" <<
     "\n2. setMinutos(int)" <<
@@ -18,7 +21,6 @@ int menu(){
     "\n4. Salir" <<
     "\nTeclea la opcion:";
     // leer la opcion
-     */
     cin >> opcion;
     
     return opcion;
@@ -26,11 +28,11 @@ int menu(){
 
 int main() {
     // Declaración del objeto de la clase Reloj
-    Reloj evento;
+    Reloj hrIniFiesta;
     int opcion, hr, min;
     
-    evento.setHora(0);
-    evento.setMinutos(0);
+    hrIniFiesta.setHora(0);
+    hrIniFiesta.setMinutos(0);
     // 1º Inicializar la vccc - la función menu( ) retorna la opcion elegida por el usuario
     opcion = menu( );
     
@@ -38,24 +40,22 @@ int main() {
         
         if (opcion == 1){
             // leer hora
-            //cout << "Ingresa la nueva hora:";
+            cout << "Ingresa la nueva hora:";
             cin >> hr;
-            evento.setHora(hr);
+            hrIniFiesta.setHora(hr);
         }
         else if (opcion == 2){
             // leer minutos
-            //cout << "Ingresa los nuevos minutos:";
+            cout << "Ingresa los nuevos minutos:";
             cin >> min;
-            evento.setMinutos(min);
+            hrIniFiesta.setMinutos(min);
         }
         else if (opcion == 3){
-            evento.incrementaMinutos();
+            hrIniFiesta.incrementaMinutos();
         }
-       
-        else
-            cout << "Opcion incorrecta\n";
+        else cout << "Opcion incorrecta\n";
         
-        cout << evento.str( ) << endl;
+        cout << hrIniFiesta.str( ) << endl;
         opcion = menu(); // 3º Actualizar la vccc dentro del ciclo
     }
     
