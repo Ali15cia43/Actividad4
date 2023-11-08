@@ -9,24 +9,56 @@
 using namespace std;
 
 void Reloj::setHora(int _hora) {
-    hora = _hora;
+
+    if(_hora >= 25 ){
+        hora = 0;
+    }else{
+        hora = _hora;
+    }
+
 }
 
 void Reloj::setMinutos(int _minutos) {
+
     minutos = _minutos;
 }
 
 string Reloj::str(){
-    return "La hora es " + to_string(hora) + ":" + to_string(minutos);
+
+    if (minutos > 9){
+        if (hora == 0){
+            return to_string(hora) + "0:" +  to_string(minutos);
+        }
+        else{
+            return to_string(hora) + ":" + to_string(minutos);
+        }
+    }
+    else if (minutos <= 9){
+        if (hora == 0){
+            return to_string(hora) + "0:0" +  to_string(minutos);
+        }
+        else{
+            return to_string(hora) + ":0" + to_string(minutos);
+        }
+    }
+    else{
+        if (hora == 0){
+            return to_string(hora) + "0:0" +  to_string(minutos);
+        }
+        else{
+
+            return to_string(hora) + ":0" +  to_string(minutos);
+        }
+    }
 }
 
 
 void Reloj::incrementaMinutos() {
     minutos++;
-    if (minutos == 60) {
+    if (minutos >= 60) {
         minutos = 0;
         hora++;
-        if (hora == 24) {
+        if (hora >= 24) {
             hora = 0;
         }
     }
